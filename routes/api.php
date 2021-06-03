@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::resource('guru', App\Http\Controllers\Api\TenderGuruController::class)->only(['index', 'store']);
+Route::resource('guru', App\Http\Controllers\Api\TenderGuruController::class)->middleware('auth:sanctum')->only(['index', 'store']);
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

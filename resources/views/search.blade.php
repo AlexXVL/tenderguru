@@ -62,10 +62,15 @@
                     dataType: 'json',
                     data: {
                         kwords: $('#kwords').text(),
-                        data: arr
+                        data: arr,
+                        "_token": "{{ csrf_token() }}",
                     },
-                    success: function(data){
-                        alert(data);
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    success: function(data)
+                    {
+                        // alert(data);
                     }
 
                 });

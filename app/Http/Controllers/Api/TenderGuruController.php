@@ -52,7 +52,7 @@ class TenderGuruController extends Controller
         if (is_null($request->input('kwords')))
             exit;
 
-        $request->merge(['user_id'=> 1]);
+        $request->merge(['user_id'=> Auth::user()->id]);
         $search_request= new SearchRequest();
         $search_request->user_id= $request->input('user_id');
         $search_request->kwords= $request->input('kwords');
